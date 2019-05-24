@@ -1,0 +1,8 @@
+caption {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+    caption-side: top;
+    border-left: solid 5px;
+    border-bottom: solid;
+}

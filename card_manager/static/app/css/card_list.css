@@ -1,0 +1,15 @@
+
+.form-group{
+    padding: 10px;
+}
+
+caption {
+    border-left: solid 5px;
+    border-bottom: solid;
+    font-size: 30px;
+    caption-side: top;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-left: solid 5px;
+    border-bottom: solid;
+}

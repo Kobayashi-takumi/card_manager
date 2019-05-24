@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'app/css/card_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="back_btn"><a href="{% url 'card_view' %}" class="btn btn-outline-secondary">Back</a></div>
+
+<table class="table table-hover">
+
+    <caption id="table_title">detail</caption>
+
+        <tr>
+            <th>Company</th>
+            <td>{{ object.company }}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{ object.last_name }}</td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <td>{{ object.first_name }}</td>
+        </tr>
+        <tr>
+            <th>Department</th>
+            <td>{{ object.department }}</td>
+        </tr>
+        <tr>
+            <th>Phone Number</th>
+            <td>{{ object.phone_number }}</td>
+        </tr>
+        <tr>
+            <th>E-mail</th>
+            <td>{{ object.email }}</td>
+        </tr>
+        <tr>
+            <th>Postal Code</th>
+            <td>{{ object.postal_code }}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{ object.office_address }}</td>
+        </tr>
+        <tr>
+            <th>Building</th>
+            <td>{{ object.building_name}}</td>
+        </tr>
+        <tr>
+            {% if object.memo %}
+            <th>Memo</th>
+            <td>{{ object.memo }}</td>
+            {% endif %}
+        </tr>
+        <tr>
+            {% if object.card_img %}
+            <th>Card Image</th>
+            <td><a href="{{ object.card_img.url }}">image</a></td>
+            {% endif %}
+        </tr>
+        <tr>
+            <th>Class</th>
+            <td>{{ object.card_classification.classification }}</td>
+        </tr>
+
+</table>
+
+<div class="float-right">
+    <a href="{% url 'card_update' object.id %}" class="btn btn-outline-secondary">Update</a>
+    <a href="{% url 'card_delete' object.id %}" class="btn btn-outline-secondary">Delete</a>
+</div>
+{% endblock %}
