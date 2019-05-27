@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul>
+    <li><a href="{% url 'card_view' %}">View</a></li>
+    <li><a href="{% url 'card_image' %}">Add</a></li>
+</ul>
+{% endblock %}

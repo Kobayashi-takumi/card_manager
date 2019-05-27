@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="back_btn">
+    <a href="{% url 'card_detail' object.id %}" class="btn btn-outline-secondary">Back</a>
+</div>
+
+    <form method="post">
+        <div class="row">
+            <table class="table table-hover">
+                <caption>Update</caption>
+                {{ form.as_table }}
+            </table>
+        </div>
+        {% csrf_token %}
+        <div class="float-right">
+            <button type="submit" class="btn btn-outline-secondary">Update</button>
+        </div>
+    </form>
+{% endblock %}
