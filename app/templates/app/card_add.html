@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="back_btn">
+    <a href="{% url 'index' %}" class="btn btn-outline-secondary">Back</a>
+</div>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <table class="table table-hover">
+                <caption>Create</caption>
+                {{ form.as_table }}
+            </table>
+        {% csrf_token %}
+        </div>
+        <div class="float-right">
+            <button type="submit" class="btn btn-outline-secondary btn-detail">Create</button>
+        </div>
+    </form>
+{{ image_text }}
+{% endblock %}
